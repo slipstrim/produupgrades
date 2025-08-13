@@ -9,14 +9,16 @@
     "pacemaker";
     "ceph-*";
     "lxc-*";
+
     
-    # net components
+# net components
     "openvswitch-*";
     "ifupdown2";
    
- "realtek-*";
-    for kali
-    # crit tools
+    "realtek-*";
+    
+for kali
+# crit tools
     "metasploit-framework";
     "burpsuite";
     "aircrack-ng";
@@ -24,8 +26,8 @@
     "john";
     "hashcat";
     "sqlmap";
-    
-    # spec drivers
+ 
+# spec drivers
     "kali-tools-802-11";
     "kali-tools-bluetooth";
 
