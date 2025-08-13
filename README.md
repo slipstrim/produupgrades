@@ -1,8 +1,3 @@
-
- ___ _    __  __   _        _   _ _______ 
-| |_) |  / /\/ /` | |_/    | | | ( (`| |  
-|_|_)_|_/_/--\_\_,|_| \    |_|_|_|)_)|_|  
-                                                                                                                      
 # PVE
 ## spec
     "pve-kernel-*";
@@ -99,12 +94,10 @@
     "corosync";
     "cluster-glue";
     "resource-agents";
-
-
-
-# **you can also add hypervisor check**
-HYPERVISOR=$(systemd-detect-virt)
-if [ "$HYPERVISOR" != "none" ]; then
-    echo "Hypervisor detected: $HYPERVISOR"
-    sudo sed -i "/Package-Blacklist {/a\ \ \ \ \"$HYPERVISOR-*\";" "$CONFIG_FILE"
-fi
+    
+# **you can also add hypervisor check, like lsb**
+    HYPERVISOR=$(systemd-detect-virt)
+    if [ "$HYPERVISOR" != "none" ]; then
+        echo "Hypervisor detected: $HYPERVISOR"
+        sudo sed -i "/Package-Blacklist {/a\ \ \ \ \"$HYPERVISOR-*\";" "$CONFIG_FILE"
+    fi
