@@ -18,7 +18,7 @@
     "realtek-*";
     
 
-# **For kali**
+# ****Kali****
 ## crit tools
     "metasploit-framework";
     "burpsuite";
