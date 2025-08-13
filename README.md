@@ -17,8 +17,9 @@
    
     "realtek-*";
     
-for kali
-# crit tools
+
+# for kali
+crit tools
     "metasploit-framework";
     "burpsuite";
     "aircrack-ng";
@@ -26,8 +27,7 @@ for kali
     "john";
     "hashcat";
     "sqlmap";
- 
-# spec drivers
+spec drivers
     "kali-tools-802-11";
     "kali-tools-bluetooth";
 
