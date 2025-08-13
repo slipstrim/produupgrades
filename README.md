@@ -19,7 +19,7 @@
     
 
 # for kali
-crit tools
+#crit tools
     "metasploit-framework";
     "burpsuite";
     "aircrack-ng";
@@ -27,7 +27,7 @@ crit tools
     "john";
     "hashcat";
     "sqlmap";
-spec drivers
+#spec drivers
     "kali-tools-802-11";
     "kali-tools-bluetooth";
 
