@@ -1,5 +1,14 @@
- 
-# spec for Proxmox
+
+░▒▓███████▓▒░░▒▓█▓▒░       ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓███████▓▒░▒▓████████▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░▒▓█▓▒░         ░▒▓█▓▒░     
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░▒▓█▓▒░         ░▒▓█▓▒░     
+░▒▓███████▓▒░░▒▓█▓▒░      ░▒▓████████▓▒░▒▓█▓▒░      ░▒▓███████▓▒░       ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓██████▓▒░   ░▒▓█▓▒░     
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░     
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░     
+░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░      ░▒▓████████▓▒░▒▓█▓▒░▒▓███████▓▒░   ░▒▓█▓▒░     
+                                                                                                                                                                                                                                             
+# PVE
+## spec
     "pve-kernel-*";
     "proxmox-ve*";
     "qemu-server";
@@ -9,15 +18,12 @@
     "pacemaker";
     "ceph-*";
     "lxc-*";
-
-    
-# net components
+## net components
     "openvswitch-*";
     "ifupdown2";
    
     "realtek-*";
     
-
 # ****Kali****
 ## crit tools
     "metasploit-framework";
@@ -31,77 +37,76 @@
     "kali-tools-802-11";
     "kali-tools-bluetooth";
 
-VMs
-# virt
+#VM
+## virt
     "virtualbox-*";
     "open-vm-tools*";
     "qemu-*";
     "libvirt-*";
-# hypervisors
+## hypervisors
     "xen-*";
     "kvm-*";
-# bridge
+## bridge
     "bridge-utils";
 
-
 # service packs
-"postgresql-*";
-"mysql-*";
-"apache2*";
-"nginx-*";
-"docker-*";
-"kube*";
+    "postgresql-*";
+    "mysql-*";
+    "apache2*";
+    "nginx-*";
+    "docker-*";
+    "kube*";
 
 # hardw
-"firmware-*";
-"microcode-*";
+    "firmware-*";
+    "microcode-*";
 
 # system progs
-"systemd-*";
-"grub-*";
-"initramfs-*";
+    "systemd-*";
+    "grub-*";
+    "initramfs-*";
 
 # sec
-"openssh-*";
-"openssl-*";
+    "openssh-*";
+    "openssl-*";
 
 # auth
-"pam-*";
-"ldap-*";
+    "pam-*";
+    "ldap-*";
 
 # for Kali/Dev
-"python3-*";
-"nodejs-*";
-"gcc-*";
-"llvm-*";
+    "python3-*";
+    "nodejs-*";
+    "gcc-*";
+    "llvm-*";
 # auto update
-Unattended-Upgrade::Allowed-Origins {
-    "kali-rolling:main";
-    "kali-rolling:contrib";
-};
+    Unattended-Upgrade::Allowed-Origins {
+        "kali-rolling:main";
+        "kali-rolling:contrib";
+    };
 
 # manual update
-Unattended-Upgrade::Package-Blacklist {
-    "kali-tools-*";
-    "setoolkit";
-};
+     Unattended-Upgrade::Package-Blacklist {
+         "kali-tools-*";
+         "setoolkit";
+     };
 
 #  Wi-Fi
-"broadcom-*";
-"ath9k-*";
+    "broadcom-*";
+    "ath9k-*";
 
 # GPU
-"amd-gpu-*";
-"intel-gpu-*";
+    "amd-gpu-*";
+    "intel-gpu-*";
 
-#cluster
+# cluster
     "corosync";
     "cluster-glue";
     "resource-agents";
 
 
 
-**you can also add hypervisor check**
+# **you can also add hypervisor check**
 HYPERVISOR=$(systemd-detect-virt)
 if [ "$HYPERVISOR" != "none" ]; then
     echo "Hypervisor detected: $HYPERVISOR"
