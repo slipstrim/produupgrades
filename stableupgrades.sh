@@ -62,4 +62,3 @@ fi
 # Завершение
 echo -e "\n\033[32mНастройка завершена! Проверка:\033[0m"
 sudo unattended-upgrades --dry-run --debug
-
