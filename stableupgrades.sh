@@ -30,7 +30,6 @@ Unattended-Upgrade::Allowed-Origins {
 Unattended-Upgrade::Package-Blacklist {
     "linux-image-*";
     "linux-headers-*";
-    "nvidia-*";
     "zfs-*";
 };
 Unattended-Upgrade::Automatic-Reboot "false";
@@ -63,3 +62,4 @@ fi
 # Завершение
 echo -e "\n\033[32mНастройка завершена! Проверка:\033[0m"
 sudo unattended-upgrades --dry-run --debug
+
