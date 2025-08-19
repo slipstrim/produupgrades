@@ -36,7 +36,6 @@ Unattended-Upgrade::Allowed-Origins {
 Unattended-Upgrade::Package-Blacklist {
     "linux-image-*";
     "linux-headers-*";
-    "nvidia-*";
     "zfs-*";
 };
 Unattended-Upgrade::Automatic-Reboot "false";
